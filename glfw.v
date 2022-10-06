@@ -134,7 +134,7 @@ pub fn get_monitors() []&Monitor {
 	c_monitors := C.glfwGetMonitors(&count)
 	check_error()
 	//
-	mut v_monitors := []&Monitor{len: count}
+	mut v_monitors := unsafe { []&Monitor{len: count} }
 	for idx := 0; idx < count; idx++ {
 		v_monitors[idx].data = unsafe { c_monitors[idx] }
 	}

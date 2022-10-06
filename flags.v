@@ -2,7 +2,7 @@ module vglfw
 
 #flag linux -I/usr/include/GLFW
 #flag linux -I@VROOT/include
-#flag linux -lglfw
+#flag linux -lglfw3
 
 #flag linux -DGLFW_INCLUDE_VULKAN=1
 

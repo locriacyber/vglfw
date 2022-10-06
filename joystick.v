@@ -125,7 +125,7 @@ pub fn (j &Joystick) get_gamepad_name() string {
 
 // get_gamepad_state returns the gamepad state
 pub fn (j &Joystick) get_gamepad_state(buttons [15]byte, axes [6]f64) bool {
-	ok := C.vglfwGetGamepadState(j.id, &buttons, &axes)
+	ok := C.vglfwGetGamepadState(j.id, &buttons[0], &axes[0])
 	check_error()
 	return ok == glfw_true
 }
